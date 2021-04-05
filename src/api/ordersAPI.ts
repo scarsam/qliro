@@ -1,4 +1,4 @@
-type Order = {
+export type OrderType = {
   label: string;
   orderNumber: string;
   created: string;
@@ -13,7 +13,7 @@ type Order = {
 
 export interface IOrder {
   userId: number;
-  orders: Order[];
+  orders: OrderType[];
 }
 
 export function fetchOrders() {

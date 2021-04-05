@@ -1,14 +1,16 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { RootState } from "..";
-import { fetchOrders, IOrder } from "../../api/ordersAPI";
+import { fetchOrders, OrderType } from "../../api/ordersAPI";
 
 export interface OrderState {
-  orders: IOrder[] | [];
+  orders: OrderType[] | [];
+  userId: number | null;
   status: "idle" | "loading" | "failed";
 }
 
 const initialState: OrderState = {
   orders: [],
+  userId: null,
   status: "idle",
 };
 
@@ -40,7 +42,8 @@ export const ordersSlice = createSlice({
       })
       .addCase(fetchOrdersAsync.fulfilled, (state, action) => {
         state.status = "idle";
-        state.orders = action.payload;
+        state.orders = action.payload.orders;
+        state.userId = action.payload.userId;
       });
   },
 });
