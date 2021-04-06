@@ -1,0 +1,25 @@
+@import "../../styles/colors.scss";
+
+.icon {
+  align-items: center;
+  display: flex;
+  margin: 0.5rem 0.5rem 1rem 0;
+}
+
+.icon img {
+  margin-right: 0.5rem;
+}
+
+.icon p {
+  margin: 0;
+}
+
+.infoBlock {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.infoBlockContent p {
+  color: $text-grey-dark;
+  margin: 0 0 0.5rem 0;
+}

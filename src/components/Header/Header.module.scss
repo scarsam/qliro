@@ -1,0 +1,14 @@
+@import "../../styles/colors.scss";
+
+.header {
+  align-items: center;
+  background: $header-bg;
+  display: flex;
+  padding: 2.125rem;
+  border-bottom: 1px solid $header-border;
+}
+
+.header h1 {
+  font-size: 1.25rem;
+  margin: 0;
+}

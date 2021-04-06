@@ -4,12 +4,12 @@ import { fetchUser, IUser } from "../../api/userAPI";
 
 export interface UserState {
   user: IUser | null;
-  status: "idle" | "loading" | "failed";
+  loading: boolean;
 }
 
 const initialState: UserState = {
   user: null,
-  status: "idle",
+  loading: false,
 };
 
 // The function below is called a thunk and allows us to perform async logic. It
@@ -33,10 +33,10 @@ export const userSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchUserAsync.pending, (state) => {
-        state.status = "loading";
+        state.loading = true;
       })
       .addCase(fetchUserAsync.fulfilled, (state, action) => {
-        state.status = "idle";
+        state.loading = false;
         state.user = action.payload;
       });
   },
@@ -45,6 +45,7 @@ export const userSlice = createSlice({
 // The function below is called a selector and allows us to select a value from
 // the state. Selectors can also be defined inline where they're used instead of
 // in the slice file. For example: `useSelector((state: RootState) => state.counter.value)`
-export const selectUser = (state: RootState) => state.userState.user;
+export const selectUserStore = (state: RootState) => state.userState;
+// export const selectUserLoading = (state: RootState) => state.userState.status;
 
 export default userSlice.reducer;

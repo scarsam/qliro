@@ -1,23 +1,32 @@
-import logo from "./logo.svg";
 import { useEffect } from "react";
 import { useAppSelector, useAppDispatch } from "./store/hooks";
-import { selectUser } from "./store/reducers/userReducer";
+import { selectOrdersStore } from "./store/reducers/orderReducer";
+import { selectUserStore } from "./store/reducers/userReducer";
+import { fetchOrdersAsync } from "./store/reducers/orderReducer";
 import { fetchUserAsync } from "./store/reducers/userReducer";
+import Header from "./components/Header";
+import CustomerSection from "./features/CustomerSection";
+import OrdersTable from "./features/OrdersTable";
 
 function App() {
-  const user = useAppSelector(selectUser);
+  const userStore = useAppSelector(selectUserStore);
+  const ordersStore = useAppSelector(selectOrdersStore);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
+    dispatch(fetchOrdersAsync());
     dispatch(fetchUserAsync());
-  }, [user, dispatch]);
+  }, [dispatch]);
 
-  console.log(user);
+  if (userStore.loading || ordersStore.loading) {
+    return <p>Loading...</p>;
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-      </header>
+      <Header user={userStore.user} />
+      <CustomerSection user={userStore.user} />
+      <OrdersTable user={userStore.user} orders={ordersStore.orders} />
     </div>
   );
 }

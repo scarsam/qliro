@@ -1,17 +1,15 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { RootState } from "..";
-import { fetchOrders, OrderType } from "../../api/ordersAPI";
+import { fetchOrders, IOrder } from "../../api/ordersAPI";
 
 export interface OrderState {
-  orders: OrderType[] | [];
-  userId: number | null;
-  status: "idle" | "loading" | "failed";
+  orders: IOrder[] | [];
+  loading: boolean;
 }
 
 const initialState: OrderState = {
   orders: [],
-  userId: null,
-  status: "idle",
+  loading: false,
 };
 
 // The function below is called a thunk and allows us to perform async logic. It
@@ -38,12 +36,11 @@ export const ordersSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchOrdersAsync.pending, (state) => {
-        state.status = "loading";
+        state.loading = true;
       })
       .addCase(fetchOrdersAsync.fulfilled, (state, action) => {
-        state.status = "idle";
-        state.orders = action.payload.orders;
-        state.userId = action.payload.userId;
+        state.loading = false;
+        state.orders = action.payload;
       });
   },
 });
@@ -51,6 +48,6 @@ export const ordersSlice = createSlice({
 // The function below is called a selector and allows us to select a value from
 // the state. Selectors can also be defined inline where they're used instead of
 // in the slice file. For example: `useSelector((state: RootState) => state.counter.value)`
-export const selectOrders = (state: RootState) => state.orderState.orders;
+export const selectOrdersStore = (state: RootState) => state.orderState;
 
 export default ordersSlice.reducer;

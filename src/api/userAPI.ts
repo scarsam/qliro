@@ -1,12 +1,10 @@
 export interface IUser {
   id: number;
-  user: {
-    firstName: string;
-    lastName: string;
-    email: string;
-    dateOfBirth: string;
-    phoneNumber: string;
-  };
+  firstName: string;
+  lastName: string;
+  email: string;
+  dateOfBirth: string;
+  phoneNumber: string;
   shippingAddress: {
     street: string;
     streetNumber: number;
@@ -28,13 +26,11 @@ export function fetchUser() {
       () =>
         resolve({
           id: 1,
-          user: {
-            firstName: "Anna",
-            lastName: "Anne",
-            email: "annaanne@qliro.com ",
-            dateOfBirth: "19901230-4567",
-            phoneNumber: "+46721234567",
-          },
+          firstName: "Anna",
+          lastName: "Anne",
+          email: "annaanne@qliro.com ",
+          dateOfBirth: "19901230-4567",
+          phoneNumber: "+46721234567",
           shippingAddress: {
             street: "Qlirovägen",
             streetNumber: 123,
