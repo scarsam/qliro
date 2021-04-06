@@ -1,4 +1,5 @@
 export type IOrder = {
+  id: number;
   label: string;
   orderNumber: string;
   created: string;
@@ -18,6 +19,7 @@ export function fetchOrders() {
       () =>
         resolve([
           {
+            id: 1,
             label: "Online",
             orderNumber: "1234567890",
             created: "05 maj, 12:33",
@@ -31,6 +33,7 @@ export function fetchOrders() {
             userId: 1,
           },
           {
+            id: 2,
             label: "Instore",
             orderNumber: "1234567890",
             created: "16 maj, 12:33",
@@ -44,6 +47,7 @@ export function fetchOrders() {
             userId: 1,
           },
           {
+            id: 3,
             label: "Manual",
             orderNumber: "1234567890",
             created: "20 maj, 12:33",
@@ -57,6 +61,7 @@ export function fetchOrders() {
             userId: 1,
           },
           {
+            id: 4,
             label: "Online",
             orderNumber: "1234567890",
             created: "24 maj, 12:33",
@@ -70,6 +75,7 @@ export function fetchOrders() {
             userId: 1,
           },
           {
+            id: 5,
             label: "Instore",
             orderNumber: "1234567890",
             created: "24 maj, 12:33",

@@ -1,20 +1,49 @@
 import { IUser } from "../../api/userAPI"; // Move into types folder
 import { IOrder } from "../../api/ordersAPI"; // Move into types folder
 import styles from "./OrdersTable.module.scss";
+import Table from "../../components/Table";
+import RowCard from "../../components/RowCard";
 
-const OrdersTable: React.VFC<{ user: IUser | null; orders: IOrder[] | [] }> = ({
+const OrdersTable: React.VFC<{ user: IUser | null; orders: IOrder[] }> = ({
   user,
   orders,
 }) => {
   if (!user) return null;
 
-  const { firstName, lastName } = user;
-  <p>{JSON.stringify(orders)}</p>;
+  console.log(orders);
+  const { firstName } = user;
   return (
-    <p>
-      Customer section {firstName}
-      {lastName}
-    </p>
+    <section className={styles.container}>
+      <h2>{firstName}'s orders</h2>
+      <div className={styles.content}>
+        <Table
+          columns={[
+            "Order number",
+            "Created",
+            "Store",
+            "Payment method",
+            "Payment status",
+            "Amount",
+          ]}
+        >
+          {orders.map((order: IOrder) => {
+            return (
+              <RowCard
+                key={order.id}
+                label={order.label}
+                orderNumber={order.orderNumber}
+                created={order.created}
+                store={order.store}
+                paymentMethod={order.paymentMethod}
+                paymentProvider={order.paymentProvider}
+                status={order.status}
+                amount={order.amount}
+              />
+            );
+          })}
+        </Table>
+      </div>
+    </section>
   );
 };
 

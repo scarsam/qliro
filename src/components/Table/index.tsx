@@ -1,20 +1,20 @@
+import styles from "./Table.module.scss";
+
 interface ITable {
   columns: string[];
 }
 
 const Table: React.FC<ITable> = ({ children, columns }) => {
   return (
-    <table>
+    <table className={styles.table}>
       <thead>
         <tr>
           {columns.map((column, index) => (
-            <tr key={index}>
-              <th>{column}</th>
-            </tr>
+            <th key={index}>{column}</th>
           ))}
         </tr>
       </thead>
-      {children}
+      <tbody>{children}</tbody>
     </table>
   );
 };

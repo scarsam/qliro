@@ -1,0 +1,59 @@
+@import "../../styles/colors.scss";
+
+.table {
+  width: 100%;
+  font-size: 0.875rem;
+
+  thead {
+    tr {
+      color: $text-grey-dark;
+      display: grid;
+      padding-bottom: 2rem;
+      grid-template-columns:
+        minmax(30px, 100px)
+        minmax(150px, 1fr)
+        minmax(150px, 1fr)
+        minmax(150px, 1fr)
+        minmax(150px, 1fr)
+        minmax(150px, 1fr)
+        minmax(150px, 1fr);
+    }
+    th {
+      text-align: left;
+      &:first-child {
+        grid-column-start: 2;
+      }
+    }
+  }
+  tbody {
+    tr {
+      position: relative;
+      display: grid;
+      align-items: center;
+      grid-template-columns:
+        minmax(30px, 100px)
+        minmax(150px, 1fr)
+        minmax(150px, 1fr)
+        minmax(150px, 1fr)
+        minmax(150px, 1fr)
+        minmax(150px, 1fr)
+        minmax(150px, 1fr);
+    }
+    td:first-child {
+      font-family: "MetropolisMedium";
+      border-radius: 5px;
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      background: red;
+      width: 20px;
+      padding: 1.45rem 0.25rem;
+      margin: 0.25rem;
+      align-items: center;
+      display: flex;
+      font-size: 0.625rem;
+    }
+    td:nth-child(2) {
+      grid-column-start: 2;
+    }
+  }
+}
