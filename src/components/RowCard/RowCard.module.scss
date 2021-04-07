@@ -1,7 +1,63 @@
 @import "../../styles/colors.scss";
 
 .rowCard {
+  color: $dark-grey;
+  font-family: "MetropolisSemibold";
   box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.16);
   border-radius: 5px;
   margin-bottom: 0.5rem;
+}
+
+.label {
+  font-family: "MetropolisSemibold";
+  border-radius: 5px;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  width: 20px;
+  padding: 1.45rem 0.25rem;
+  margin: 0.25rem;
+  align-items: center;
+  display: flex;
+  font-size: 0.625rem;
+}
+
+.orderNumber,
+.store {
+  display: flex;
+  align-items: center;
+}
+
+.orderNumber {
+  color: $link-color;
+  img {
+    margin-left: 0.125rem;
+  }
+}
+
+.store img {
+  margin-right: 0.5rem;
+}
+
+.paymentMethod {
+  display: flex;
+  align-items: center;
+  img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+  .paymentMethodCard {
+    border-radius: 4px;
+    border: 1px solid $light-grey;
+    height: 24px;
+    width: 40px;
+    margin-right: 0.5rem;
+  }
+  .paymentMethodWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    height: 100%;
+    box-sizing: border-box;
+  }
 }

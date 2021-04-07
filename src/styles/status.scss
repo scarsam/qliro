@@ -1,0 +1,21 @@
+.Failed,
+.Inprogress,
+.Paid {
+  display: inline-block;
+  border-radius: 50%;
+  height: 8px;
+  width: 8px;
+  margin-right: 0.5rem;
+}
+
+.Failed {
+  background-color: $status-failed;
+}
+
+.Inprogress {
+  background-color: $status-in-progress;
+}
+
+.Paid {
+  background-color: $status-paid;
+}

@@ -5,6 +5,12 @@
   font-weight: 700;
 }
 @font-face {
+  font-family: "MetropolisSemibold";
+  src: local("MetropolisSemibold"),
+    url(../fonts/Metropolis-SemiBold.woff2) format("woff");
+  font-weight: 600;
+}
+@font-face {
   font-family: "MetropolisMedium";
   src: local("MetropolisMedium"),
     url(../fonts/Metropolis-Medium.woff2) format("woff");
