@@ -21,8 +21,14 @@
   }
 }
 
-.infoBlockContent p {
-  color: $text-grey-dark;
-  font-family: "MetropolisMedium", $font-fallback;
-  margin: 0 0 0.5rem 0;
+.infoBlockContent {
+  p,
+  a,
+  address {
+    color: $text-grey-dark;
+    font-family: "MetropolisMedium", $font-fallback;
+    margin: 0 0 0.5rem 0;
+    text-decoration: none;
+    font-style: normal;
+  }
 }

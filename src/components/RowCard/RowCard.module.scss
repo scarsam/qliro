@@ -14,9 +14,27 @@
   font-size: 0.625rem;
   margin: 0.25rem;
   padding: 1.45rem 0.25rem;
+  position: relative;
   transform: rotate(180deg);
   width: 20px;
   writing-mode: vertical-rl;
+  .upsell {
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    left: -20px;
+    position: absolute;
+    top: 0;
+    transform: rotate(180deg);
+    img {
+      background-color: $white;
+      border-radius: 50%;
+      border: 1px solid $light-grey;
+      height: 12px;
+      padding: 6px;
+      width: 12px;
+    }
+  }
 }
 
 .orderNumber,

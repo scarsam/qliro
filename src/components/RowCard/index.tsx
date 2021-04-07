@@ -2,22 +2,13 @@ import styles from "./RowCard.module.scss";
 import { countryIcons, paymentIcons } from "../../utils/iconsMapper";
 import { maskCardNumber } from "../../utils/maskCardNumber";
 import RightArrow from "../../assets/icons/RightArrow.svg";
-interface IRowCard {
-  label: string;
-  orderNumber: string; // Number
-  created: string; // Date
-  country: string;
-  cardNumber: number | null;
-  store: string;
-  paymentMethod: string;
-  paymentProvider: string;
-  status: string;
-  amount: string; // Number
-}
+import UpsellIcon from "../../assets/icons/Upsell.svg";
+import { IOrder } from "../../api/ordersAPI";
 
-const concatStr = (str: string) => (str ? str.split(" ").join("") : "");
+const concatStr = (str: string | undefined) =>
+  str ? str.split(" ").join("") : "";
 
-const RowCard: React.VFC<IRowCard> = ({
+const RowCard: React.VFC<Partial<IOrder>> = ({
   label,
   orderNumber,
   created,
@@ -28,10 +19,18 @@ const RowCard: React.VFC<IRowCard> = ({
   paymentProvider,
   status,
   amount,
+  upsell,
 }) => {
   return (
     <tr className={styles.rowCard}>
-      <td className={`${styles.label} ${label}`}>{label}</td>
+      <td className={`${styles.label} ${label}`}>
+        {label}{" "}
+        {upsell ? (
+          <span className={styles.upsell}>
+            <img src={UpsellIcon} alt="upsell icon" />
+          </span>
+        ) : null}
+      </td>
       <td className={styles.orderNumber}>
         {orderNumber} <img src={RightArrow} alt={orderNumber} />
       </td>

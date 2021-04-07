@@ -34,8 +34,6 @@ function App() {
 export default App;
 
 // Todo
-// Upsell icon
 // Tests
-// Redux state change
-// Link to phone number and email
+// Redux state change -> Header (Search -> update names)
 // Tooltip / Button

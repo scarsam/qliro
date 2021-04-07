@@ -7,7 +7,7 @@ import QLIRO from "../assets/icons/payment/Qliro.svg";
 import TRUSTLY from "../assets/icons/payment/Trustly.svg";
 import VISA from "../assets/icons/payment/VISA.png";
 
-export const countryIcons = (country: string) => {
+export const countryIcons = (country: string | undefined) => {
   const mapper = {
     SE: SE,
     NO: NO,
@@ -19,7 +19,7 @@ export const countryIcons = (country: string) => {
   return countryIcon ? countryIcon : "";
 };
 
-export const paymentIcons = (method: string) => {
+export const paymentIcons = (method: string | undefined) => {
   const mapper = {
     AMEX: AMEX,
     Paypal: PAYPAL,

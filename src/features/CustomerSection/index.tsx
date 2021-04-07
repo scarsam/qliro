@@ -20,26 +20,30 @@ const CustomerSection: React.VFC<{ user: IUser | null }> = ({ user }) => {
     <section className={styles.container}>
       <div className={styles.content}>
         <InfoBlock icon={EmailPhoneIcon} title={`Contact ${firstName}`}>
-          <p>{email}</p>
-          <p>{phoneNumber}</p>
+          <p>
+            <a href={`mailto:${email}`}>{email}</a>
+          </p>
+          <p>
+            <a href={`tel:${phoneNumber}`}>{phoneNumber}</a>
+          </p>
         </InfoBlock>
         <InfoBlock icon={ShippingIcon} title="Shipping address">
-          <p>
+          <address>
             {shippingAddress.street} {shippingAddress.streetNumber},
-          </p>
-          <p>
+          </address>
+          <address>
             {shippingAddress.zipCode} {shippingAddress.city}{" "}
             {shippingAddress.country}
-          </p>
+          </address>
         </InfoBlock>
         <InfoBlock icon={InvoiceIcon} title="Invoice address">
-          <p>
+          <address>
             {invoiceAddress.street} {invoiceAddress.streetNumber},
-          </p>
-          <p>
+          </address>
+          <address>
             {invoiceAddress.zipCode} {invoiceAddress.city}{" "}
             {invoiceAddress.country}
-          </p>
+          </address>
         </InfoBlock>
       </div>
     </section>

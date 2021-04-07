@@ -12,7 +12,6 @@ const OrdersTable: React.VFC<{ user: IUser | null; orders: IOrder[] }> = ({
 }) => {
   if (!user) return null;
 
-  console.log(orders);
   const { firstName } = user;
   return (
     <section className={styles.container}>
@@ -45,6 +44,7 @@ const OrdersTable: React.VFC<{ user: IUser | null; orders: IOrder[] }> = ({
                 paymentProvider={order.paymentProvider}
                 status={order.status}
                 amount={order.amount}
+                upsell={order.upsell}
               />
             );
           })}

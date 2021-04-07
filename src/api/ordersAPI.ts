@@ -11,6 +11,7 @@ export type IOrder = {
   status: string;
   amount: string;
   userId: number;
+  upsell: boolean;
 };
 
 export function fetchOrders() {
@@ -31,6 +32,7 @@ export function fetchOrders() {
             status: "Paid",
             amount: "2160 kr",
             userId: 1,
+            upsell: false,
           },
           {
             id: 2,
@@ -45,6 +47,7 @@ export function fetchOrders() {
             status: "In progress",
             amount: "3890 kr",
             userId: 1,
+            upsell: false,
           },
           {
             id: 3,
@@ -59,6 +62,7 @@ export function fetchOrders() {
             status: "Failed",
             amount: "1134 kr",
             userId: 1,
+            upsell: false,
           },
           {
             id: 4,
@@ -73,6 +77,7 @@ export function fetchOrders() {
             status: "In progress",
             amount: "567 kr",
             userId: 1,
+            upsell: true,
           },
           {
             id: 5,
@@ -87,6 +92,7 @@ export function fetchOrders() {
             status: "Paid",
             amount: "8970 kr",
             userId: 1,
+            upsell: false,
           },
         ]),
       500,
