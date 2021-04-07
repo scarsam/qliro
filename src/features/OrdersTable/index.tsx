@@ -3,6 +3,8 @@ import { IOrder } from "../../api/ordersAPI"; // Move into types folder
 import styles from "./OrdersTable.module.scss";
 import Table from "../../components/Table";
 import RowCard from "../../components/RowCard";
+import Pagination from "../../components/Pagination";
+import Tooltip from "../../components/Tooltip";
 
 const OrdersTable: React.VFC<{ user: IUser | null; orders: IOrder[] }> = ({
   user,
@@ -14,8 +16,11 @@ const OrdersTable: React.VFC<{ user: IUser | null; orders: IOrder[] }> = ({
   const { firstName } = user;
   return (
     <section className={styles.container}>
-      <h2>{firstName}'s orders</h2>
-      <div className={styles.content}>
+      <div className={styles.userBar}>
+        <h2>{firstName}'s orders</h2>
+        <Tooltip label="Help" />
+      </div>
+      <div className={styles.overflowScroll}>
         <Table
           columns={[
             "Order number",
@@ -45,6 +50,7 @@ const OrdersTable: React.VFC<{ user: IUser | null; orders: IOrder[] }> = ({
           })}
         </Table>
       </div>
+      <Pagination totalPages={2} />
     </section>
   );
 };

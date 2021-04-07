@@ -28,3 +28,7 @@
     url(../fonts/Metropolis-Light.woff2) format("woff");
   font-weight: 300;
 }
+
+$font-fallback: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+  "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  sans-serif; ;

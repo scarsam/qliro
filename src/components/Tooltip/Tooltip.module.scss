@@ -1,0 +1,25 @@
+@import "../../styles/colors.scss";
+@import "../../styles/fonts.scss";
+
+.tooltip {
+  display: flex;
+  align-items: center;
+  button {
+    color: $link-color;
+    font-family: "MetropolisSemibold", $font-fallback;
+    border: none;
+    background: none;
+    outline: none;
+  }
+  .icon {
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $light-grey;
+    font-size: 0.75rem;
+    width: 16px;
+    height: 16px;
+    margin-right: 0.125rem;
+  }
+}

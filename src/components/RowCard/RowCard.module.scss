@@ -2,14 +2,12 @@
 
 .rowCard {
   color: $dark-grey;
-  font-family: "MetropolisSemibold";
   box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.16);
   border-radius: 5px;
   margin-bottom: 0.5rem;
 }
 
 .label {
-  font-family: "MetropolisSemibold";
   border-radius: 5px;
   writing-mode: vertical-rl;
   transform: rotate(180deg);

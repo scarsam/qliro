@@ -6,9 +6,8 @@
 body {
   background-color: $body-bg;
   margin: 0;
-  font-family: MetropolisRegular, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
-    "Helvetica Neue", sans-serif;
+  font-size: 0.875rem;
+  font-family: MetropolisSemibold, $font-fallback;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

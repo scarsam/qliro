@@ -1,0 +1,33 @@
+@import "../../styles/colors.scss";
+@import "../../styles/fonts.scss";
+
+.pagination {
+  display: flex;
+  justify-content: flex-end;
+  padding: 2rem 0;
+  font-family: "MetropolisSemibold", $font-fallback;
+  ul {
+    list-style: none;
+    display: flex;
+    padding: 0 1.7rem;
+
+    li {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      height: 40px;
+      width: 40px;
+      margin: 0 0.7rem;
+    }
+    .active {
+      color: $white;
+      background-color: $forest-green;
+    }
+  }
+  button {
+    background: none;
+    border: none;
+    padding: 0;
+  }
+}

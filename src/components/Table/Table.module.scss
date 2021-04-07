@@ -1,4 +1,5 @@
 @import "../../styles/colors.scss";
+@import "../../styles/fonts.scss";
 
 .table {
   width: 100%;
@@ -22,6 +23,8 @@
       padding-bottom: 2rem;
     }
     th {
+      font-family: "MetropolisMedium", $font-fallback;
+      font-weight: inherit;
       text-align: left;
       &:first-child {
         grid-column-start: 2;
