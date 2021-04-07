@@ -1,14 +1,17 @@
 @import "../../styles/colors.scss";
+@import "../../styles/variables.scss";
 
 .header {
   align-items: center;
   background: $header-bg;
+  border-bottom: 1px solid $header-border;
   display: flex;
   padding: 2.125rem;
-  border-bottom: 1px solid $header-border;
-}
-
-.header h1 {
-  font-size: 1.25rem;
-  margin: 0;
+  @media (max-width: $large) {
+    padding: 2.125rem 1rem;
+  }
+  h1 {
+    font-size: 1.25rem;
+    margin: 0;
+  }
 }

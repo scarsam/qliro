@@ -1,28 +1,31 @@
 @import "../../styles/colors.scss";
 @import "../../styles/fonts.scss";
+@import "../../styles/variables.scss";
 
 .pagination {
   display: flex;
+  font-family: "MetropolisSemibold", $font-fallback;
   justify-content: flex-end;
   padding: 2rem 0;
-  font-family: "MetropolisSemibold", $font-fallback;
+  @media (max-width: $large) {
+    padding: 1rem 1rem;
+  }
   ul {
-    list-style: none;
     display: flex;
+    list-style: none;
     padding: 0 1.7rem;
-
     li {
-      display: flex;
       align-items: center;
-      justify-content: center;
       border-radius: 50%;
+      display: flex;
       height: 40px;
-      width: 40px;
+      justify-content: center;
       margin: 0 0.7rem;
+      width: 40px;
     }
     .active {
-      color: $white;
       background-color: $forest-green;
+      color: $white;
     }
   }
   button {

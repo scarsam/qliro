@@ -19,7 +19,7 @@ function App() {
   }, [dispatch]);
 
   if (userStore.loading || ordersStore.loading) {
-    return <p>Loading...</p>;
+    return <p className="loading">Loading...</p>;
   }
 
   return (
@@ -32,3 +32,10 @@ function App() {
 }
 
 export default App;
+
+// Todo
+// Upsell icon
+// Tests
+// Redux state change
+// Link to phone number and email
+// Tooltip / Button

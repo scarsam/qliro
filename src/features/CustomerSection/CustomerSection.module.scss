@@ -1,15 +1,18 @@
 @import "../../styles/colors.scss";
+@import "../../styles/variables.scss";
 
 .container {
   border-bottom: 1px solid $header-border;
-  max-width: 1300px;
   margin: 0 auto;
+  max-width: 1300px;
   width: 100%;
-}
-
-.content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 2.5rem 6rem;
+  .content {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 2.5rem 1rem;
+    @media (min-width: $large) {
+      padding: 2.5rem 6rem;
+    }
+  }
 }
