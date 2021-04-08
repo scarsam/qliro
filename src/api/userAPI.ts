@@ -20,11 +20,11 @@ export interface IUser {
     country: string;
   };
 }
-export function fetchUser() {
-  return new Promise<IUser>((resolve) =>
-    setTimeout(
-      () =>
-        resolve({
+export function fetchUsers() {
+  return new Promise<IUser[]>((resolve) =>
+    setTimeout(() => {
+      const users = [
+        {
           id: 1,
           firstName: "Anna",
           lastName: "Anne",
@@ -45,8 +45,35 @@ export function fetchUser() {
             city: "Stockholm",
             country: "Sweden",
           },
-        }),
-      500,
-    ),
+        },
+        {
+          id: 2,
+          firstName: "Sam",
+          lastName: "Öjling",
+          email: "s.ojling@gmail.com ",
+          dateOfBirth: "19900214-1234",
+          phoneNumber: "+14153219307",
+          shippingAddress: {
+            street: "Dalagatan",
+            streetNumber: 68,
+            zipCode: "113 24",
+            city: "Stockholm",
+            country: "Sweden",
+          },
+          invoiceAddress: {
+            street: "Mason Street",
+            streetNumber: 1325,
+            zipCode: "94133",
+            city: "San Francisco",
+            country: "United States",
+          },
+        },
+      ];
+
+      // const user =
+      //   users.find((user) => user.firstName.includes(userName)) || users[0];
+      // resolve(user);
+      resolve(users);
+    }, 500),
   );
 }
