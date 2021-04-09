@@ -1,0 +1,22 @@
+{
+  "id": 1,
+  "firstName": "Anna",
+  "lastName": "Anne",
+  "email": "annaanne@qliro.com ",
+  "dateOfBirth": "19901230-4567",
+  "phoneNumber": "+46721234567",
+  "shippingAddress": {
+    "street": "Qlirovägen",
+    "streetNumber": 123,
+    "zipCode": "12345",
+    "city": "Stockholm",
+    "country": "Sweden"
+  },
+  "invoiceAddress": {
+    "street": "Qlirovägen",
+    "streetNumber": 123,
+    "zipCode": "12345",
+    "city": "Stockholm",
+    "country": "Sweden"
+  }
+}
