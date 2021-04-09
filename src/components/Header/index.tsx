@@ -35,6 +35,7 @@ const Header: React.VFC<IHeader> = ({ user, searchResult }) => {
   return (
     <header className={styles.header}>
       <input
+        data-testid="search"
         className={styles.search}
         type="text"
         onChange={(e) => searchUser(e.target.value)}

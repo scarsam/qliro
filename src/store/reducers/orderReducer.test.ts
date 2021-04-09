@@ -1,4 +1,4 @@
-import orderReducer from "../store/reducers/orderReducer";
+import orderReducer from "./orderReducer";
 
 describe("order reducer", () => {
   it("should handle initial state", () => {

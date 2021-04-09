@@ -70,9 +70,6 @@ export function fetchUsers() {
         },
       ];
 
-      // const user =
-      //   users.find((user) => user.firstName.includes(userName)) || users[0];
-      // resolve(user);
       resolve(users);
     }, 500),
   );
