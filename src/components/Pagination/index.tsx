@@ -10,19 +10,42 @@ const Pagination: React.VFC<IPagination> = ({
   totalPages,
   defaultPage = 1,
 }) => {
-  const [active, setActive] = useState(defaultPage);
+  const [currentPage, setCurrentPage] = useState(defaultPage);
+  const pages = Array.from({ length: totalPages }, (_, i) => i + 1);
 
   return (
     <nav className={styles.pagination}>
-      <button>Back</button>
+      <button
+        onClick={() =>
+          setCurrentPage((currentPage) =>
+            currentPage === 1 ? currentPage : currentPage - 1,
+          )
+        }
+        className={pages[0] === currentPage ? styles.back : styles.next}
+      >
+        Back
+      </button>
       <ul>
-        {Array.from({ length: totalPages }, (_, i) => (
-          <li className={i + 1 === active ? styles.active : ""} key={i}>
-            {i + 1}
+        {pages.map((page) => (
+          <li className={page === currentPage ? styles.active : ""} key={page}>
+            {page}
           </li>
         ))}
       </ul>
-      <button>Next</button>
+      <button
+        onClick={() =>
+          setCurrentPage((currentPage) =>
+            currentPage < pages[pages.length - 1]
+              ? currentPage + 1
+              : currentPage,
+          )
+        }
+        className={
+          pages[pages.length - 1] === currentPage ? styles.back : styles.next
+        }
+      >
+        Next
+      </button>
     </nav>
   );
 };
