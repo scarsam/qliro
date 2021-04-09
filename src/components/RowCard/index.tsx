@@ -51,7 +51,7 @@ const RowCard: React.VFC<Partial<IOrder>> = ({
         <span className={concatStr(status)}></span>
         {status}
       </td>
-      <td>{amount}</td>
+      <td className={styles.amount}>{amount}</td>
     </tr>
   );
 };

@@ -3,11 +3,13 @@
 
 .tooltip {
   align-items: center;
+  cursor: pointer;
   display: flex;
   button {
     background: none;
     border: none;
     color: $link-color;
+    cursor: pointer;
     font-family: "MetropolisSemibold", $font-fallback;
     outline: none;
   }
